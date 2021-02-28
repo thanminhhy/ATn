@@ -13,7 +13,7 @@ if(!$pg)
     die("Connection failed: " . pg_connect_error());
 }
 # Get data by query
-			$query = 'select * from test_lab6';
+			$query = 'select * from user_information';
 			$result = pg_query($pg, $query);
 			# Display data column by column
 			$i = 0;
