@@ -1,4 +1,4 @@
-
+<?php
 function emptyInputLogin($username,$pwd)
 {
     $result;
