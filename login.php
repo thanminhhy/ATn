@@ -19,9 +19,9 @@
                 if($_GET["error"] == "emptyinput"){
                     echo "<p>Fill in all fields!</p>";
                 }
-                elseif ($_GET["error"] == "invaliduid")
+                elseif ($_GET["error"] == "wronglogin")
                 {
-                    echo "<p>Enter a proper username!</p>";
+                    echo "<p>Enter a proper information!</p>";
                 }
                 elseif ($_GET["error"] == "passwordsdontmatch")
                 {
