@@ -21,3 +21,13 @@ function emptyInputLogin($username,$pwd)
     }
     return $result;
 }
+function loginUser($conn, $username, $pwd)
+{
+    $uidExists = uidExists($conn, $username);
+
+    if($uidExists == false)
+    {
+        header("location: ../login.php?error=wronglogin");
+        exit();
+    }
+}
