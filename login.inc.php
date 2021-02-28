@@ -1,4 +1,6 @@
 <?php
+  require_once 'dtb.inc.php';
+        require_once 'functions.inc.php';
     if(isset($_POST["submit"]))
     {
         $username = $_POST["uid"];
@@ -10,9 +12,6 @@
         else {
             echo"Wrong Information!"
         }
-
-        require_once 'dtb.inc.php';
-        require_once 'functions.inc.php';
         
         if(emptyInputLogin($username, $pwd) !== false)
         {
