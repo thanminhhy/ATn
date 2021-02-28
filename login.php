@@ -29,36 +29,6 @@
                 }
             }
         ?>
-        <?php
-            $account = pg_connect("host=ec2-54-235-139-166.compute-1.amazonaws.com 
-            dbname=d2aln19jkoqgc5
-            port=5432
-            user=dbzoashpxvqhmp
-            password=1d18b71cc013c47de2c56d8e5970d0aab6ed70c04d1b2d2f6ef73ae37b9cfdb8
-            sslmode=require");
-
-            if ($account === false) {
-            die("ERROR: Could not connect to the database server!");
-            } else {
-            echo ("Connect successfully! ");
-
-            $uid = $_POST['UserName'];
-            $password = $_POST['password'];
-
-            $query = "SELECT * FROM user_information WHERE user_name = '$uid' AND \"password\" = '$pwd'";
-            $result = pg_query($account, $query);
-            $count = pg_num_rows($result);
-            if ($count == 1) {
-                session_start();
-                $_SESSION["UserName"] = $uid;
-                header('Location: ./login.php');
-            } else {
-                echo ("Wrong username or password. Please try again!") . pg_errormessage($query);
-                header('refresh: 2; url= ./index.php');
-            }
-            }
-        pg_close($account);
-
 <?php
     include_once 'footer.php';
 ?>
