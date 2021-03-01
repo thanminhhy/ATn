@@ -1,7 +1,5 @@
 <?php
     session_start();
-    if(isset($_POST["submit"]))
-    {
         $username = $_POST["uid"];
         $pwd = $_POST["pwd"];
         if($username == 'staff' $$ $pwd =='12345')
@@ -15,8 +13,4 @@
         else{
         echo"incorrect username and password"
             exit();
-    }
-    else{
-        header("location: ../login.php");
-    }
 ?>
