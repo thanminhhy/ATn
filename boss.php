@@ -7,15 +7,38 @@
   password=1d18b71cc013c47de2c56d8e5970d0aab6ed70c04d1b2d2f6ef73ae37b9cfdb8
    sslmode=require");
 
-   $query = "SELECT * FROM products"; //You don't need a ; like you do in SQL
-	$result = pg_query($query);
+$query = 'select * from products';
+			$result = pg_query($connect, $query);
+			# Display data column by column
+			$i = 0;
+			echo '<html><body><table><tr>';
+			while ($i < pg_num_fields($result))
+			{
+				$fieldName = pg_field_name($result, $i);
+				echo '<td>' . $fieldName . '</td>';
+				$i = $i + 1;
+			}
+			echo '</tr>';
+			# Display data row by row
+			$i = 0;
+			while ($row = pg_fetch_row($result)) 
+			{
+				echo '<tr>';
+				$count = count($row);
+				$y = 0;
+				while ($y < $count)
+				{
+					$c_row = current($row);
+					echo '<td>' . $c_row . '</td>';
+					next($row);
+					$y = $y + 1;
+				}
+				echo '</tr>';
+				$i = $i + 1;
+			}
+			pg_free_result($result);
 
-	echo "<table>"; // start a table tag in the HTML
+			echo '</table></body></html>';
 
-	while($row = pg_fetch_array($result)){   //Creates a loop to loop through results
-	echo "<tr><td>" . $row['product_id'] . "</td><td>" . $row['product_name'] . "</td>td>" . $row['quantity'] . "</td>td>" . $row['price'] . "</td></tr>";  //$row['index'] the index here is a field name
-	}
+		?> 
 
-	echo "</table>"; //Close the table in HTML
-
-	pg_close($connect); //Make sure to close out the database connection
