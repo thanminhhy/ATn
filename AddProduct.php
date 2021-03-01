@@ -1,5 +1,6 @@
 <?php
-	# Heroku credential 
+	echo '<p>TEST HEROKU POSTGRESQL DATABASE </p>'; 
+			# Heroku credential 
 			$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
 			$db_heroku = "d8k42dnhtd0o9i";
 			$user_heroku = "crmjpgdtqgprga";
@@ -12,20 +13,37 @@
 			{
 				die('Error: Could not connect: ' . pg_last_error());
 			}
-    } else {
-      $product_id = $_POST['Id'];
-      $product_name = $_POST['Productname'];
-      $quantity = $_POST['Quantity'];
-      $price = $_POST['Price'];
-    }
-   $query = "INSERT INTO Products (product_id, product_name, quantity, price) 
-    VALUES('$product_id', '$product_name', '$quantity', '$price');";
-   $result = pg_query($pg_heroku, $query);
-   if ($result) {
-      echo "<script>alert('Record added succesfully!');</script>";
-      header('refresh: 3; url=staff.html');
-   } else {
-      echo ("ERROR + $query") . pg_errormessage($query);
-    }
-    pg_close($pg_heroku);
+			# Get data by query
+			$query = 'select * from Products';
+			$result = pg_query($pg_heroku, $query);
+			# Display data column by column
+			$i = 0;
+			echo '<html><body><table><tr>';
+			while ($i < pg_num_fields($result))
+			{
+				$fieldName = pg_field_name($result, $i);
+				echo '<td>' . $fieldName . '</td>';
+				$i = $i + 1;
+			}
+			echo '</tr>';
+			# Display data row by row
+			$i = 0;
+			while ($row = pg_fetch_row($result)) 
+			{
+				echo '<tr>';
+				$count = count($row);
+				$y = 0;
+				while ($y < $count)
+				{
+					$c_row = current($row);
+					echo '<td>' . $c_row . '</td>';
+					next($row);
+					$y = $y + 1;
+				}
+				echo '</tr>';
+				$i = $i + 1;
+			}
+			pg_free_result($result);
+
+			echo '</table></body></html>';
 ?>
