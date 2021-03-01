@@ -8,7 +8,7 @@
    sslmode=require");
 
    $query = 'select * from products';
-			$result = pg_query($connect $query);
+			$result = pg_query($connect, $query);
 			# Display data column by column
 			$i = 0;
 			echo '<html><body><table><tr>';
