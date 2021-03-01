@@ -5,7 +5,7 @@
         <h2 style="margin-left: 30px;">Log In</h2>
         <div class="container">
             <div class="login-form">
-                <form action="login.inc.php" method="post">
+                <form action="login.php" method="post">
                     <input type="text" name="uid" placeholder="UserName...">
                     <input type="password" name="pwd" placeholder="PassWord...">
                     <button type="submit" name="submit">Login</button>
