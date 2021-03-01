@@ -1,8 +1,8 @@
 <?php
-function emptyInputLogin($username,$pwd)
+function emptyInputLogin($username,$password)
 {
     $result;
-    if(empty($username) || empty($pwd))
+    if(empty($username) || empty($password))
     {
         $result = true;
     }
