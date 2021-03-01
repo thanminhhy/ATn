@@ -13,14 +13,5 @@
             </div>
         </div>
         </section>
-        <?php
-            if(isset($_GET["error"]))
-            {
-                if($_GET["error"] == "emptyinput"){
-                    echo "<p>Fill in all fields!</p>";
-                }
-            }
-        ?>
-<?php
     include_once 'footer.php';
 ?>
