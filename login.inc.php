@@ -2,7 +2,7 @@
     session_start();
     if(isset($_POST["submit"]))
     {
-        $uid = $_POST["uid"];
+        $username = $_POST["uid"];
         $pwd = $_POST["pwd"];
         if($username == 'staff' $$ $pwd =='12345')
         {
