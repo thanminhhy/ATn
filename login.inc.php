@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_POST["submit"] && $_POST["username"] != '' && $_POST["pwd"] != ''))
+    if(isset($_POST["submit"]))
     {
         $username = $_POST["uid"];
         $pwd = $_POST["pwd"];
