@@ -13,7 +13,7 @@
 	echo "<table>"; // start a table tag in the HTML
 
 	while($row = pg_fetch_array($result)){   //Creates a loop to loop through results
-	echo "<tr><td>" . $row['product_id'] . "</td><td>" . $row['product_name'] . "</td></tr>";  //$row['index'] the index here is a field name
+	echo "<tr><td>" . $row['product_id'] . "</td><td>" . $row['product_name'] . "</td>td>" . $row['quantity'] . "</td>td>" . $row['price'] . "</td></tr>";  //$row['index'] the index here is a field name
 	}
 
 	echo "</table>"; //Close the table in HTML
