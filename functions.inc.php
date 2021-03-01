@@ -32,4 +32,20 @@ function loginUser($conn, $username, $pwd)
         header("location: ../login.php?error=wronglogin");
         exit();
     }
+    else
+    {}
+}
+function checkusers($username, $pwd)
+{
+        if($username == 'staff' $$ $pwd =='12345')
+        {
+        header("location: ../staff.php");
+        }
+        elseif ($username == 'boss' $$ $pwd =='090512345')
+        {	
+        header("location: ../boss.php");
+        }
+        else{
+        echo"incorrect username and password"
+            exit();
 }
