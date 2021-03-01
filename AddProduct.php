@@ -11,7 +11,7 @@
     } else {
       $product_id = $_POST['Id'];
       $product_name = $_POST['Productname'];
-      $quanitty = $_POST['Quantity'];
+      $quanity = $_POST['Quantity'];
       $price = $_POST['Price'];
 
     }
