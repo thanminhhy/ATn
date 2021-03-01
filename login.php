@@ -26,7 +26,7 @@
 	    }
 	    else{
 		    echo"incorrect username and password"
-			    exit();
+			require"login.php";
 	    }
             if(isset($_GET["error"]))
             {
