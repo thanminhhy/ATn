@@ -2,13 +2,13 @@
     session_start();
     if(isset($_POST["submit"]))
     {
-        $username = $_POST["uid"];
+        $uid = $_POST["uid"];
         $pwd = $_POST["pwd"];
-        if($username == 'staff' $$ $pwd =='12345')
+        if($uid == 'staff' $$ $pwd =='12345')
         {
         header("location: ../staff.php");
         }
-        elseif ($username == 'boss' $$ $pwd =='090512345')
+        elseif ($uid == 'boss' $$ $pwd =='090512345')
         {	
         header("location: ../boss.php");
         }
