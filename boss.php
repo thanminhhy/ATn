@@ -7,7 +7,7 @@
   password=1d18b71cc013c47de2c56d8e5970d0aab6ed70c04d1b2d2f6ef73ae37b9cfdb8
    sslmode=require");
 
-   $query = "select product_id, product_name, product_amount, product_price from Product ;";
+   $query = "select product_id, product_name, quantity, price from products ;";
 $result = pg_query($con, $query);
 $resultCheck = pg_num_rows($result);
 ?>
