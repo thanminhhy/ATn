@@ -9,6 +9,6 @@ $password = $_POST['Password'];
     } else
     {
         echo "incorrect username and password";
-        require "login.html";
+         header("location:login.html");
     }
 ?>
