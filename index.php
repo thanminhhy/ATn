@@ -1,8 +1,14 @@
 <?php
-    include_once 'header.php';
+session_start();
+$username = $_POST['Username'];
+$password = $_POST['Password'];
+    if ($username == 'admin' && $password == '123') {
+        header("location:staff.html");
+    } elseif ($username == 'boss' && $password == '123') {
+        header("location:boss.html");
+    } else
+    {
+        echo "incorrect username and password";
+        require "login.html";
+    }
 ?>
-		<h1>Welcome to the home page of ATN Shop</h1>
-
-</div>
-</body>
-</html>
