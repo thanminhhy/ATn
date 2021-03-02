@@ -29,6 +29,7 @@
         <div class="container">
             <h1 style = "text-align: center; margin-top: 10px;">ATN Management Dashboard</h1>
             <form action="login.html" method = "POST">
+		<a href="login.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">View Data</a><hr>
               <button style="margin-bottom: 10px;" type="button" class="btn btn-primary btn-sm" id="logout-button" name="logout-button">Log out</button>
             </form>
             <table class="table table-striped table-primary">
