@@ -28,7 +28,7 @@
       <body>
         <div class="container">
             <h1 style = "text-align: center; margin-top: 10px;">ATN Management Dashboard</h1>
-            <form action="bosslogin.html" method = "POST">
+            <form action="login.html" method = "POST">
               <button style="margin-bottom: 10px;" type="button" class="btn btn-primary btn-sm" id="logout-button" name="logout-button">Log out</button>
             </form>
             <table class="table table-striped table-primary">
